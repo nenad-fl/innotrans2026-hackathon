@@ -21,11 +21,11 @@ Solutions are evaluated on relevance, reliability, stress testing, innovation, a
 | --- | --- |
 | `src/` | Will be used by participants to upload their agents, MCP servers, data-building scripts, and notebooks. |
 | `data/` | Training and testing data available for solution development. |
-| `docs/` | Public problem statement, schema, and hackathon questions. |
+| `docs/` | Public problem statement, schema, and training/testing questions. |
 
 ## Dataset
 
-The dataset describes a partial Berlin U-Bahn network and covers different urban data from **June 10, 2026 through September 21, 2026** for the training period.
+The training dataset describes a partial Berlin U-Bahn network and covers different urban data from **June 10, 2026 through September 21, 2026**. A separate testing dataset covers the evaluation period from **September 22 through October 1, 2026** and must not be used to develop or tune the solution.
 
 ### Main data sources
 
@@ -42,6 +42,8 @@ Read the complete [dataset schema](docs/dataset_schema.md) before using the data
 - Flow station columns match `stations_with_ubahn.station_name`.
 - `flows.timestamp` joins to the weather timestamp at the 15-minute grain.
 - Events do not contain station IDs and may need to be associated with stations through their venue or address.
+
+The [testing questions](docs/hackathon_questions_testing.md) describe the final evaluation scenarios. Testing data is in `data/testing dataset/`; it contains rest-period flows, closures, weather, energy, and events. Unlike the training event file, `berlin_events_summer_2026_rest.csv` does not include a header row.
 
 ## Getting Started
 
@@ -87,6 +89,7 @@ The [training questions](docs/hackathon_questions_training.md) provide represent
 - [Problem statement](docs/innotrans2026_hackathon_problem_statement.md)
 - [Dataset schema](docs/dataset_schema.md)
 - [Training questions](docs/hackathon_questions_training.md)
+- [Testing questions](docs/hackathon_questions_testing.md)
 
 ## License and Usage
 
